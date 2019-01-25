@@ -1,0 +1,117 @@
+adonis serve --dev
+npm install -D eslint
+npx eslint --init
+adonis migration:run
+adonis make:controller User
+adonis route:list
+
+http://127.0.0.1:3333
+
+{
+   "username":"diego3g",
+   "email": "diego@rocketseat.com.br",
+   "password": "123456"
+}
+
+adonis make:controller session
+
+{
+   "email": "diego@rocketseat.com.br",
+   "password": "123456"
+}
+
+Para acrescentar novos campos (o projeto estava no comeco)
+Desfaz a ultima operação de migration
+adonis migration:rollback
+Acrescentar campos
+adonis migration:run
+
+
+adonis install @adonisjs/mail
+
+site mailtrap.io
+
+
+{
+"token":"xxxxxx",
+"password:"xxxxx"
+}
+
+adonis make:model File -m -c
+adonis migration:run
+
+adonis make:model Project -m -c
+adonis make:model Task -m -c
+
+adonis migration:run
+
+Enviar token authorization bearer
+{
+"title":"Projeto em React",
+"description": "teste"
+}
+
+/projects/**id do projeto **/tasks
+
+{
+"title": "Tarefa 1",
+"user_id": 1,
+"file_id": 1,
+"description": "teste",
+"due_data": "2018-09-10 18:00:00"
+}
+
+adonis install @adonisjs/validator
+adonis make:validator User
+adonis make:ehandler
+
+adonis make:validator Session
+adonis make:validator ForgotPassword
+adonis make:validator ResetPassword
+adonis make:validator Project
+adonis make:validator Task
+
+adonis install @adonisjs/antl
+
+adonis make:hook Task
+
+relacionamentos no banco de dados
+https://rubsphp.blogspot.com/2011/04/tabelas-e-colunas-no-mysql.html
+
+Para validar se os relacionamentos estão corretos no banco de dados
+
+SELECT * FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_SCHEMA = 'adonis' AND TABLE_NAME = 'tasks' AND REFERENCED_TABLE_NAME IS NOT NULL;
+
+
+docker run --name redis -p 6379:6379 -d redis:alpine
+docker ps
+redis local - kitematic 192.168.99.100:32768
+
+adonis install @adonisjs/redis
+npm install adonis-kue
+
+adonis make:job NewTaskMail
+adonis kue:listen
+
+npm install raven
+
+adonis make:model UserAddress -m
+adonis migration:run
+
+
+{
+   "username":"diego3g22",
+   "email": "diego2@rocketseat.com.br",
+   "password": "1234562",
+   "password_confirmation": "1234562",
+   "addresses": [
+    {
+    "street": "Rua Teste",
+    "number": 20,
+    "city": "cidade teste",
+    "state": "SP"
+    }
+    ]
+}
+
+
